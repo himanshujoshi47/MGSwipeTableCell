@@ -979,6 +979,9 @@ static inline CGFloat mgEaseInOutBounce(CGFloat t, CGFloat b, CGFloat c) {
     }
     CGFloat offset = fabs(_swipeOffset);
   
+    if (_delegate && [_delegate respondsToSelector:@selector(swipeOffset:forSwipeSettings:)]) {
+        [_delegate swipeOffset:offset forSwipeSettings:activeSettings];
+    }
   
     if (!activeButtons || offset == 0) {
         if (_leftView)

@@ -191,6 +191,7 @@ typedef void(^MailActionCallback)(BOOL cancelled, BOOL deleted, NSInteger action
     if (!cell) {
         cell = [[MailTableCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    
     cell.delegate = self;
     
     MailData * data = [demoData objectAtIndex:indexPath.row];
@@ -200,6 +201,10 @@ typedef void(^MailActionCallback)(BOOL cancelled, BOOL deleted, NSInteger action
     cell.mailTime.text = data.date;
     [self updateCellIndicactor:data cell:cell];
     return cell;
+}
+
+-(void)swipeOffset:(CGFloat)offset forSwipeSettings:(MGSwipeSettings *)settings {
+    NSLog(@"Swipe offset is : %f", offset);
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

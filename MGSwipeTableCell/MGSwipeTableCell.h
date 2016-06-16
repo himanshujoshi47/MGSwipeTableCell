@@ -147,6 +147,12 @@ typedef NS_ENUM(NSInteger, MGSwipeEasingFunction) {
 
 @optional
 /**
+ * Delegate method to get the regular updates for
+ * swipe offset
+ **/
+- (void) swipeOffset:(CGFloat) offset forSwipeSettings:(MGSwipeSettings*) settings;
+
+/**
  * Delegate method to enable/disable swipe gestures
  * @return YES if swipe is allowed
  **/

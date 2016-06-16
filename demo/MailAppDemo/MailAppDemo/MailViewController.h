@@ -6,7 +6,7 @@
 #import <UIKit/UIKit.h>
 #import "MGSwipeTableCell.h"
 
-@interface MailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate>
+@interface MailViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate, UIActionSheetDelegate, MGSwipeTableCellDelegate>
 
 @property (nonatomic, strong) UITableView * tableView;
 
